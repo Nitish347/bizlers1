@@ -6,11 +6,13 @@ import 'package:provider/provider.dart';
 
 import '../providers/vehicalProviders.dart';
 
-class TwoWheelerAPI {
+class VehicalAPI {
   static void NameAPI(BuildContext context) async {
     var provider = Provider.of<VehicalProvider>(context, listen: false);
-    var request = http.Request('GET',
-        Uri.parse('https://test.turbocare.app/turbo/care/v1/makes?class=2w'));
+    var request = http.Request(
+        'GET',
+        Uri.parse(
+            'https://test.turbocare.app/turbo/care/v1/makes?class=${provider.cls}w'));
 
     http.StreamedResponse response = await request.send();
 
@@ -33,7 +35,7 @@ class TwoWheelerAPI {
     var request = http.Request(
         'GET',
         Uri.parse(
-            'https://test.turbocare.app/turbo/care/v1/models?class=2w&make=$vehical'));
+            'https://test.turbocare.app/turbo/care/v1/models?class=${provider.cls}w&make=$vehical'));
 
     http.StreamedResponse response = await request.send();
 

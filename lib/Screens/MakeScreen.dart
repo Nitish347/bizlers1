@@ -1,4 +1,4 @@
-import 'package:bizlers/APIServices/TwoWheelersAPI.dart';
+import 'package:bizlers/APIServices/VehicalAPI.dart';
 import 'package:bizlers/Screens/ModelScreen.dart';
 import 'package:bizlers/utils/AppTitle.dart';
 import 'package:bizlers/widgets/Tile.dart';
@@ -27,7 +27,7 @@ class MakeScreen extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return InkWell(
                         onTap: () {
-                          TwoWheelerAPI.ModelAPI(
+                          VehicalAPI.ModelAPI(
                               context, provider.VehicalName[index]);
                           provider.updateVehical(
                               Make: provider.VehicalName[index]);

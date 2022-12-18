@@ -1,5 +1,6 @@
-import 'package:bizlers/APIServices/TwoWheelersAPI.dart';
+import 'package:bizlers/APIServices/VehicalAPI.dart';
 import 'package:bizlers/Screens/MakeScreen.dart';
+import 'package:bizlers/Screens/optionScreen.dart';
 import 'package:bizlers/models/vehicalModel.dart';
 import 'package:bizlers/providers/vehicalProviders.dart';
 import 'package:bizlers/utils/AppTitle.dart';
@@ -21,9 +22,8 @@ class MockScreen extends StatelessWidget {
           onPressed: () async {
             print(provider.VehicalNumber);
             if (formKey.currentState!.validate()) {
-              if (provider.isLoading) TwoWheelerAPI.NameAPI(context);
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => MakeScreen()));
+                  MaterialPageRoute(builder: (context) => OptionScreen()));
             }
           },
           child: Icon(Icons.arrow_forward_ios_outlined),

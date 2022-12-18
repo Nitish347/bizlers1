@@ -6,6 +6,12 @@ class VehicalProvider with ChangeNotifier {
   List<dynamic> VehicalName = [];
   bool isLoading = true;
 
+  String cls = "2";
+  void updateCls(String cls) {
+    this.cls = cls;
+    notifyListeners();
+  }
+
   void updateVehicalNameList(List<dynamic> VehicalName) {
     this.VehicalName = VehicalName;
     print(VehicalName.toString());
